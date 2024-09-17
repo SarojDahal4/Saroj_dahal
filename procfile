@@ -1,2 +1,1 @@
-web : gunicorn app.wsgi --log-Filter
-web : python3 manage.py migrate && gunicorn app.wsg
+web gunicorn app.wsgi:application --log-File-
