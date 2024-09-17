@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ie-7acwc#+c@=6u=sy6ut@d6#_o-ho$&jsc1klr@wc=nk%s!5k
 DEBUG = True
 
 ALLOWED_HOSTS = ['sarojdahal-production.up.railway.app', 'https://sarojdahal-production.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['sarojdahal-production.up.railway.app', 'https://sarojdahal-production.up.railway.app'] 
+CSRF_TRUSTED_ORIGINS = ['https://sarojdahal-production.up.railway.app'] 
 
 # Application definition
 
