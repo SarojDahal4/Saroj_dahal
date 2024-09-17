@@ -14,6 +14,12 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 
+
+
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 #load our environmental
@@ -29,8 +35,8 @@ SECRET_KEY = 'django-insecure-ie-7acwc#+c@=6u=sy6ut@d6#_o-ho$&jsc1klr@wc=nk%s!5k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sarojdahal-production.up.railway.app', 'https://sarojdahal-production.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://sarojdahal-production.up.railway.app'] 
+ALLOWED_HOSTS = []
+#CSRF_TRUSTED_ORIGINS = ['https://sarojdahal-production.up.railway.app'] 
 
 # Application definition
 
@@ -81,16 +87,13 @@ WSGI_APPLICATION = 'sarose.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-      
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE':'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': os.environ.get('DB_PASSWORD_YO'),
-        'HOST':'localhost',
-      
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
