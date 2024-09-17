@@ -1,0 +1,121 @@
+{% extends 'app/index.html'%}
+{% block content%}
+{%load static%}
+<style>
+.section-title{
+    min-height: 40vh;
+    padding: 10vh;
+}
+.sec2{
+    min-height: 40vh;
+    padding: 10vh;
+
+}
+.card{
+    max-width: 40vh;
+}
+
+.photo1{
+    
+    
+    overflow: hidden;
+    height:40vh;
+    max-width: 40vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+}
+.photo1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the circular div */
+}
+
+
+.row{
+    padding: 1vh;
+}
+
+</style>
+
+<div class="section-title">
+    <h4 class="text-brown text-uppercase text-light" style="letter-spacing: 5px;">My Project</h4>
+    <h1 class="display-4 text-light">My personnal Project</h1>
+    <div class="row align-items-center">
+        <div class="col-lg-4 ">
+            <div class="card">
+                <div class="photo1">
+                    <img src="{% static 'image/my_photo.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">My Portfolio</h5>
+                    <p class="card-text">Explore my portfolio to see how I leverage HTML, CSS, Bootstrap, Python, and Django to create visually compelling and functional web applications.</p>
+                    <a href="{% url 'home'%}" class="btn btn-primary">My Portfolio</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-lg-4 ">
+            <div class="card">
+                <div class="photo1">
+                    <img src="{% static 'image/coffee.png' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Coffee_Shop Website</h5>
+                    <p class="card-text">Discover how I blend creativity with technology using HTML, CSS, Bootstrap, Python, and Django. Explore my projects to see innovative solutions in action.</p>
+                    <a href="{% url 'image'%}" class="btn btn-primary">View Clip</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="photo1">
+                    <img src="{% static 'image/my_photo.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Small Project</h5>
+                    <p class="card-text">"Built and refined essential tools like  Book Library System and To-Do list honing my skills with every line of code while mastering Django and Bootstrap."</p>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-title sec2">
+    
+    <h1 class="display-4 text-light">Colloge Project</h1>
+
+    <div class="row align-items-center">
+        <div class="col-lg-4 ">
+            <div class="card">
+                <div class="photo1">
+                    <img src="{% static 'image/my_photo.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Face Recognization</h5>
+                    <p class="card-text">Developed a face recognition system using OpenCV (cv2) and Tkinter for a user-friendly graphical interface..</p>
+                    <a href="{%url 'Fimage' %}" class="btn btn-primary">View Clip</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-lg-4 ">
+            <div class="card">
+                <div class="photo1">
+                    <img src="{% static 'image/my_photo.jpg' %}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Client-Server App</h5>
+                    <div class="progress mb-3">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> In proccess</div>
+                      </div>
+                    <a href="#" class="btn btn-primary ">Sorry!!</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'app/index.html'%}
+{% block content%}
+<style>
+body {
+  margin: 0;
+  
+  font-family: 'Almarai', sans-serif;
+}
+    .section-title h4, .section-title h1 {
+        margin: 0; /* Remove default margins */
+    }
+    
+    .per_info {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        align-items: center; /* Center items vertically */
+        gap: 20px; /* Space between items */
+    }
+
+    .per_info > div {
+        text-align: center; /* Center text inside items */
+        flex: 1 1 auto; /* Flex grow and shrink */
+        margin: 10px; /* Space around items */
+    }
+    
+    .per_info i {
+        display: block;
+        margin-bottom: 10px; /* Space between icon and text */
+    }
+    
+    .per_info h4 {
+        margin: 0 0 5px 0; /* Remove default margin for heading */
+    }
+    
+    .per_info p {
+        margin: 0; /* Remove default margin for paragraph */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .per_info {
+            flex-direction: column; /* Stack items vertically on small screens */
+            text-align: center;
+        }
+    }
+    p{
+        text-decoration-color: aliceblue;
+    }
+</style>
+
+
+
+
+
+<style>
+    /* Centering content vertically and horizontally */
+ .whole {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh; /* Full viewport height */
+   
+     
+ }
+ 
+ .register_f {
+     background: linear-gradient(to right, #00aaff, #0047ff);
+     border-radius: 10px;
+     padding: 20px;
+     width: 100%;
+     max-width: 500px; /* Limit the maximum width */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+ }
+ 
+ h1 {
+     color: white;
+ }
+ 
+ .form-control {
+     border-radius: 5px;
+     border: 1px solid #ccc; /* Default border */
+ }
+ 
+ .btn-primary {
+     background-color: #007bff;
+     border-color: #007bff;
+     border-radius: 5px;
+ }
+ 
+ .btn-primary:hover {
+     background-color: #0056b3;
+     border-color: #004085;
+ }
+ 
+ </style>
+
+ <div class="whole">
+     <div class="text-center register_f" style="background: linear-gradient(to right, #00aaff, #0047ff); border-radius: 10px;">
+         <h1 class="text-black mb-4 mt-5">Login Here...</h1>
+         <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control"  placeholder="EnterYour Username"name="username">
+              
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="EnterYour Password">
+            </div>
+           
+            <button type="submit" class="btn btn-dark">Login</button>
+          </form>
+          <h5>Don't have an account <a style="color: white;" href="{% url 'register'%}">Register here.</a></h5>
+     </div>
+ </div>
+
+
+
+{% endblock %}
+

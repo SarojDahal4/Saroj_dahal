@@ -1,0 +1,43 @@
+{% extends 'app/index.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+  .carousel-item img {
+    padding: 5vh 0 0 20vh;
+    max-width: 90%;
+    max-height: 80vh; /* Adjust height as needed */
+    object-fit: cover; 
+  }
+  
+</style>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'image/f1.png' %}" class="d-block w-100" alt="Coffee">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/f2.png' %}" class="d-block w-100" alt="Image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/f3.png' %}" class="d-block w-100" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/f4.png' %}" class="d-block w-100" alt="Image 3">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/f5.png' %}" class="d-block w-100" alt="Image 4">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% endblock %}

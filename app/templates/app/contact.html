@@ -1,0 +1,113 @@
+{% extends 'app/index.html'%}
+{% block content%}
+
+<style>
+body {
+  margin: 0;
+  
+  font-family: 'Almarai', sans-serif;
+}
+    .section-title h4, .section-title h1 {
+        margin: 0; /* Remove default margins */
+    }
+    
+    .per_info {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        align-items: center; /* Center items vertically */
+        gap: 20px; /* Space between items */
+    }
+
+    .per_info > div {
+        text-align: center; /* Center text inside items */
+        flex: 1 1 auto; /* Flex grow and shrink */
+        margin: 10px; /* Space around items */
+    }
+    
+    .per_info i {
+        display: block;
+        margin-bottom: 10px; /* Space between icon and text */
+    }
+    
+    .per_info h4 {
+        margin: 0 0 5px 0; /* Remove default margin for heading */
+    }
+    
+    .per_info p {
+        margin: 0; /* Remove default margin for paragraph */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .per_info {
+            flex-direction: column; /* Stack items vertically on small screens */
+            text-align: center;
+        }
+    }
+    p{
+        text-decoration-color: aliceblue;
+    }
+</style>
+
+<div class="section-title">
+    <h4 class="text-white text-center text-uppercase" style="letter-spacing: 5px;">Contact Me</h4>
+    <h1 class="text-white text-center">Feel Free To Contact</h1>
+</div>
+
+
+
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="reservation position-relative overlay-top overlay-bottom">
+            <div class="row align-items-center">
+                <div class="col-lg-7 my-5 my-lg-0">
+                    <div class="p-5">
+                        <div class="mb-4">
+                            <h1 class="display-4 text-center text-white">Get in Touch with Me</h1>
+                        </div>
+                        <div class="per_info">
+                            <div>
+                                <i class="fa fa-2x fa-map-marker-alt mb-3 text-white"></i>
+                                <h4 class="font-weight-bold" style="color: white;">Address</h4>
+                                <p><i class="fa fa-map-marker-alt mr-2 text-light"></i><a href="https://www.google.com/maps/place/849+Pacific+Hwy,+Chatswood+NSW+2067/@-33.793262,151.1775756,16z/data=!3m1!4b1!4m6!3m5!1s0x6b12a8d13981e2b9:0xb4f59739593b5d0e!8m2!3d-33.7932665!4d151.1801559!16s%2Fg%2F11c2dv4h2h?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">849 Pacific Hwy, Chatswood NSW 2067</a></p>
+                            </div>
+                            <div>
+                                <i class="fa fa-2x fa-phone-alt mb-3 text-white"></i>
+                                <h4 class="font-weight-bold" style="color: white;">Phone</h4>
+                                <p style="color: white;">04 02294235</p>
+                            </div>
+                            <div>
+                                <i class="far fa-2x fa-envelope mb-3 text-white"></i>
+                                <h4 class="font-weight-bold" style="color: white;">Email</h4>
+                                <p style="color: white;">sarojdahal035@hotmail.com</p>
+                            </div>
+
+                        </div>
+                        <div class="mb-4" style="padding: 5vh 0 0 0;">
+                            <h1 class="display-4 text-center text-white">Follow Me...</h1>
+
+                            <div class="social-icons" style="text-align: center;">
+                                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="text-center p-5" style="background: linear-gradient(to right, #00aaff, #0047ff); border-radius: 10px;">
+                        <h1 class="text-black mb-4 mt-5">Contact Me</h1>
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-secondary btn-block font-weight-bold py-3 text-Dark" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'app/index.html'%}
+{% block content %}
+{%load static%}
+<style>
+    .row {
+        padding-top: 5vh;
+        padding-left: 2vh;
+        padding-right: 4vh;
+    }
+    
+    .story {
+        border-radius: 2px;
+        padding-left: 3vh;
+    }
+    .row1 {
+        padding-left: 10vh;
+        min-width: 70vh;
+        min-height: 70vh;
+    }
+    .context {
+        padding-top: 5vh;
+        color: rgb(230, 233, 235);
+    }
+    .row2 {
+        min-height: 50vh;
+        min-width: 100%;
+    }
+    .context2 {
+        color: rgb(230, 233, 235);
+        padding-top: 0vh;
+        padding-left: 10vh;
+    }
+    .context2 h4{
+        text-decoration: underline white;
+    }
+
+    .inline-professions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .profession-item {
+        margin: 0;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+    }
+
+    .social-icons a:last-child {
+        margin-right: 0;
+    }
+
+    .btn-outline-light {
+        margin-top: 10px;
+    }
+.photo1{
+    padding-left: 5vh;
+    border-radius: 25%;
+    overflow: hidden;
+    height: 40vh;
+    width: 40vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+}
+.photo1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the circular div */
+}
+</style>
+
+<div class="row row1">
+    <div class="col-lg-6 mb-4 mb-lg-0 context">
+        <h8>Hi There,</h8>
+        <h2 class="mb-3">I'm Saroj Dahal.</h2>
+
+        <div class="inline-professions">
+            {% for profession in professions %}
+                <h4 class="profession-item">{{ profession.profession }}</h4>
+            {% endfor %}
+        </div>
+
+        <h5>
+            I'm a full-stack developer skilled in Python, Django, and SQL, with a strong foundation in HTML and CSS. 
+            I build robust, scalable applications and ensure seamless integration between frontend and backend technologies.
+        </h5>
+        
+        <div class="social-icons">
+            
+            <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.facebook.com/saroj.dahal.71653"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.linkedin.com/in/saroj-dahal-451342318/"><i class="fab fa-linkedin-in"> </i></a>
+            <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/sa_roj_da_hal/"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://github.com/SarojDahal4"><i class="fab fa-github"></i></a>
+        </div>
+        
+       
+        <a class="btn btn-lg btn-outline-light btn-lg-square" href="{% url 'cv' %}">
+            <i class="bi bi-file-arrow-down-fill"></i> Download CV
+        </a>
+        
+    </div>
+
+    <div class="col-lg-6 mb-4 mb-lg-0 photo1">
+        <img src="{% static 'image/my_photo.jpg' %}" alt="My Photo" >
+    </div>
+</div>
+
+<div class="row row2">
+    <div class="col-lg-7 mb-4 mb-lg-0 photo1">
+        <img src="{% static 'image/my_photo.jpg' %}" alt="My Photo" >
+    </div>
+
+    <div class="col-lg-5 mb-4 mb-lg-0 context2">
+        <h4>My Story</h4>
+        <h8>
+            From a young age, I was fascinated by technology and how it shapes our world. Growing up, 
+            I was always curious about how software could solve real-world problems and improve our daily lives. 
+            This curiosity guided me towards pursuing a degree in Software Engineering, 
+            a field where I could combine my passion for technology with my problem-solving skills.
+        </h8>
+        <br>
+        {% if user.is_authenticated %}
+        <a href="{% url 'about'%}" class="btn btn-light font-weight-bold py-2 px-4 mt-2">About Me</a>
+        {% else %}
+        <a href="{% url 'login'%}" class="btn btn-light font-weight-bold py-2 px-4 mt-2">Login For More..</a>
+        {% endif%}
+    </div>
+</div>
+{% endblock %}
+
+
