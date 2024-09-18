@@ -15,7 +15,12 @@ import os
 from dotenv import load_dotenv
 import django_heroku
 import dj_database_url
+from decouple import config
 
+
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}
 
 
 
@@ -34,7 +39,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-ie-7acwc#+c@=6u=sy6ut@d6#_o-ho$&jsc1klr@wc=nk%s!5k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 #CSRF_TRUSTED_ORIGINS = ['https://sarojdahal-production.up.railway.app'] 
