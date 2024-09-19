@@ -94,3 +94,6 @@ def Fimage (request):
 
 def cv(request):
     return render (request, "app/cv.html",{})
+
+def custom_404_view(request, exception):
+    return redirect('home')
