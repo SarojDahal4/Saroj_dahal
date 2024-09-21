@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'whitenoise.runserver_nostatic',
+    'phonenumber_field',
 
 ]
 
