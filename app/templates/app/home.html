@@ -124,11 +124,11 @@
             a field where I could combine my passion for technology with my problem-solving skills.
         </h8>
         <br>
-        {% if user.is_authenticated %}
+        
         <a href="{% url 'about'%}" class="btn btn-light font-weight-bold py-2 px-4 mt-2">About Me</a>
-        {% else %}
-        <a href="{% url 'login'%}" class="btn btn-light font-weight-bold py-2 px-4 mt-2">Login For More..</a>
-        {% endif%}
+       
+       
+        
     </div>
 </div>
 {% endblock %}

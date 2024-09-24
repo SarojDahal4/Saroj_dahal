@@ -72,7 +72,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
               </li>
-              {% if user.is_authenticated %}
+              
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'about'%}">About</a>
               </li>
@@ -84,7 +84,7 @@
               <li class="nav-item " >
                 <a class="nav-link active" href="{% url 'project'%}">Project</a>
               </li>
-              {%endif%}
+           
               <li class="nav-item ">
                 <a class="nav-link active" href="{% url 'contact'%}">Contact</a>
               </li>
@@ -93,21 +93,7 @@
                 <a class="nav-link" style="text-decoration: line-through;" href="#">Product</a>
               </li>
             </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              {% if user.is_authenticated %}
-              <li class="nav-item ">
-                <a class="nav-link log active" href="{% url 'logout'%}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item ">
-                <a class="nav-link log active" href="{% url 'login'%}">Login</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link reg active" href="{% url 'register'%}">Register</a>
-              </li>
-            {%endif%} 
-            
-            </ul>
+           
            
           
              
